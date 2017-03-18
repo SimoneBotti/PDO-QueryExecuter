@@ -1,8 +1,11 @@
 <?php
 	//Call it the first time to get the PDO object
+	$dsn='YOUR DSN TO DATABASE'
+	$username='YOUR USERNAME';
+	$password='YOUR PASSWORD';
 	function connect(){
     	try{
-   	   		$pdo = new PDO('mysql:host=localhost;dbname=my_grvepica', 'grvepica', '');
+   	   		$pdo = new PDO($dsn, $username, $password);
    	   		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
    	   		$pdo->exec('SET NAMES "utf8"');
  		}catch(PDOException $e){
