@@ -1,9 +1,9 @@
-# PDO-QueryExecuter
+# PDO-QueryExecuter Object
 Library to execute Query with PDO object
 
 1)Import the php file to your project.<br>
-2)In your project obtain the PDO object using the "connect" function.<br>
-3)Use the "ExecuteQuery" function to execute the query.<br>
+2)When you need to execute a query in your project create a Controller object<br>
+3)Call the getData() method of the Controller object to obtain the result<br>
 
 
 -connect(): Return the PDO object connected to your database.<br>
