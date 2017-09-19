@@ -10,9 +10,9 @@
 			$this->queryExe=new QueryExecuter($this->dsn,$this->username,$this->password);
 		}
 		
-		function getData($sql){
+		function getData(){
 			$this->queryExe->connect();
-			$sth=$this->queryExe->Execute($sql);
+			$sth=$this->queryExe->Execute(func_get_args());
 			$result = $sth->fetchAll();
 			return $result;
 		}
