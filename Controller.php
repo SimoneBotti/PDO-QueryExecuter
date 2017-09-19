@@ -1,14 +1,12 @@
 <?php
 	require_once 'QueryExecuter.php';
 	class Controller{
-		
-		public $dsn='mysql:host=localhost;dbname=my_sitoarticoli';
-		public $username='localhost';
-		public $password='';
-		
+		public $dsn;
+		public $username;
+		public $password;		
 		private $queryExe;
 		
-		function __construct(){
+		function __construct($ds,$user,$pass){			$this->dsn=$ds;			$this->username=$$user;			$this->password=$pass;
 			$this->queryExe=new QueryExecuter($this->dsn,$this->username,$this->password);
 		}
 		
