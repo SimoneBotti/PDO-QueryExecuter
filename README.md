@@ -12,23 +12,23 @@ You can put as many parameters as you need.
 
 Php Example:
 
-//YOUR PHP FILE
-//File where you need to execute Query
-  $controller=new Controller("YOUR DATABASE NAME","USERNAME","PASSWORD");
-  $result_array=$controller->getData("YOUR SQL QUERY",[Param1],[Param2]);
-
-//In $result_array you will have the associative array of the result of the query.
-//In this format, ['Field Name'],value.
-For Example to point the field Name
-  $result_array['Name']
+//YOUR PHP FILE<br>
+//File where you need to execute Query<br>
+  $controller=new Controller("YOUR DATABASE NAME","USERNAME","PASSWORD");<br>
+  $result_array=$controller->getData("YOUR SQL QUERY",[Param1],[Param2]);<br>
+<br>
+//In $result_array you will have the associative array of the result of the query.<br>
+//In this format, ['Field Name'],value.<br>
+For Example to point the field Name<br>
+  $result_array['Name']<br><br><br>
   
   
-  If you have to do multiple Querys to the same Database you need just one controller object:
+  If you have to do multiple Querys to the same Database you need just one controller object:<br><br>
   
-  Example:
-  //YOUR PHP FILE 
-  //File where you need to execute Query
-    $controller=new Controller("YOUR DATABASE NAME","USERNAME","PASSWORD");
-    $result_array=$controller->getData("YOUR FIRST SQL QUERY",[Param1],[Param2]);
-    $result_array2=$controller->getData("YOUR SECOND SQL QUERY",[Param1],[Param2]);
+  Example:<br>
+  //YOUR PHP FILE <br>
+  //File where you need to execute Query<br>
+    $controller=new Controller("YOUR DATABASE NAME","USERNAME","PASSWORD");<br>
+    $result_array=$controller->getData("YOUR FIRST SQL QUERY",[Param1],[Param2]);<br>
+    $result_array2=$controller->getData("YOUR SECOND SQL QUERY",[Param1],[Param2]);<br>
   
