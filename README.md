@@ -10,7 +10,7 @@ CONTROLLER <br>
 The parameters are optional, if your query doen't need parameters you can avoid putting them.
 You can put as many parameters as you need.
 
--getRowCount(): Return the rows count of the resulting array.<br><br>
+-<b>getRowCount()</b>: Return the rows count of the resulting array.<br><br>
 
 -hasResult(): Return true if the resulting array has at least one row, False if it has 0 row.<br><br>
 
