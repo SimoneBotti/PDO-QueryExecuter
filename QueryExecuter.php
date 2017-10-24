@@ -37,7 +37,7 @@
 				$query=$sql[0];
 				$s = $this->pdo->prepare($query);
 				for($i=1;$i<count($sql);$i++){
-					echo $sql[$i];
+					//echo $sql[$i];
 					$s->bindValue(($i), $sql[$i]);
 				}
 				$s->execute();
@@ -55,10 +55,10 @@
 		function executeSelect(){
 			$sql=func_get_arg(0);
 			try{
-				$query=$sql;
+				$query=$sql[0];
 				$s = $this->pdo->prepare($query);
-				for($i=1;$i<func_num_args();$i++){
-					$s->bindValue(($i-1), func_get_arg($i));
+				for($i=1;$i<count($sql);$i++){
+					$s->bindValue(($i), $sql[$i]);
 				}
 				$s->execute();
 			}catch(PDOException $e){
