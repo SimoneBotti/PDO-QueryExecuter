@@ -12,7 +12,7 @@
 		private $rows=0;
 		
 		private $Ssql="SELECT Id FROM ";
-		private $Esql="WHERE Email=? AND Password=?";
+		private $Esql=" WHERE Email=? AND Password=?";
 		
 
 		function __construct($ds,$user,$pass){
