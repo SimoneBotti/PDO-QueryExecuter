@@ -59,7 +59,7 @@
 			$sql=$this->Ssql.$tableName.$this->Esql;
 			$result=$this->getData($sql,$email,$password);
 			if($this->getRowCount()==1){
-				return $result['Id'];
+				return $result[0]['Id'];
 			}else{
 				return 0;
 			}
