@@ -18,6 +18,7 @@ Php Example:
 
 //YOUR PHP FILE<br>
 //File where you need to execute Query<br>
+  require_once 'Controller.php';
   $controller=new Controller("YOUR DATABASE NAME","USERNAME","PASSWORD");<br>
   $result_array=$controller->getData("YOUR SQL QUERY",[Param1],[Param2]);<br>
 <br>
