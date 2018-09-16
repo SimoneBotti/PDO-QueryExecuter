@@ -14,6 +14,8 @@ You can put as many parameters as you need.
 
 -<b>hasResult()</b>: Return true if the resulting array has at least one row, False if it has 0 row.<br><br>
 
+-<b>execute(SQL,[Param1],[Param2],[...])</b>:Return true if the query executed correctly, False instead.
+
 Php Example:
 
 //YOUR PHP FILE<br>
