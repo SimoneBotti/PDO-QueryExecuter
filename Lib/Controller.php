@@ -38,7 +38,11 @@
 			$sth=$this->queryExe->executeSelect(func_get_args());
             $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 			$this->rows=count($result);
-			return $result;
+			if($this->rows==1){
+				return $result[0];
+			}else{
+				return $result;
+			}
 		}
 		function getRowCount(){
 			return $this->rows;
@@ -49,6 +53,14 @@
 			}else{
 				return true;
 			}
+		}
+		//Function that check if a Query has a result
+		function sqlHasResult(){
+			$this->queryExe->connect();
+			$sth=$this->queryExe->executeSelect(func_get_args());
+            $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+			$this->rows=count($result);
+			return $this->hasResult();
 		}
 		
 		
