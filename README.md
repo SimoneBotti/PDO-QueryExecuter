@@ -16,7 +16,7 @@ You can put as many parameters as you need.
 
 -<b>execute(SQL,[Param1],[Param2],[...])</b>:Return true if the query executed correctly, False otherwise.<br><br>
 
--<b>sqlHasResult(SQL,[Param1],[Param2],[...]):Return True if the query has at least one result, False otherwise</b>
+-<b>sqlHasResult(SQL,[Param1],[Param2],[...])</b>:Return True if the query has at least one result, False otherwise</b>
 
 Php Example:
 
