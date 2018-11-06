@@ -76,7 +76,28 @@
 				return 0;
 			}
 		}
-		
+		/**
+		 * Function Exists
+		 * check if the value exist in the row of the table given
+		 * If exists return how many times
+		 */
+		function exists($tableName,$column,$value){
+			$sql=constructSqlExist($tableName,$columnm,$value);
+			$result=$this->getData($sql,$value);
+			if($this->getRowCount()>0){
+				return this->getRowCount();
+			}else{
+				return false;
+			}
+		}
+		/**
+		 * Function constructSqlExist
+		 * create the sql to check if the value exist
+		 */
+		function costructSqlExist($tableName,$column,$value){
+			$sql="SELECT ".$column." FROM ".$tableName." WHERE ".$column." = ?";
+			return $sql;
+		}
 
 	}
 
