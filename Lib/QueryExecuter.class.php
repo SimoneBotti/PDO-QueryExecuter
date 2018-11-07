@@ -29,7 +29,6 @@
 			return $this->pdo;
 		}
 		
-
 		//Function that executes query
     	//First:Query
         //Second-Infinity:Parameters
