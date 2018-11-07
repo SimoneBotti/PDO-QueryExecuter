@@ -8,14 +8,14 @@
 		
 		private $pdo;
 		
-		function __construct(string $ds, string $user, string $pass)
+		public function __construct(string $ds, string $user, string $pass)
 		{
 			$this->dsn = $ds;
 			$this->username = $user;
 			$this->password = $pass;
 		}
 		
-		function connect()
+		public function connect()
 		{
 			try{
 				$this->pdo = new PDO($this->dsn, $this->username, $this->password);
@@ -33,7 +33,7 @@
 		//Function that executes query
     	//First:Query
         //Second-Infinity:Parameters
-		function execute()
+		public function execute()
 		{
 			$sql = func_get_arg(0);
 
@@ -58,7 +58,7 @@
 		//Function that executes query
     	//First:Query
         //Second-Infinito:Parameters
-		function executeSelect()
+		public function executeSelect()
 		{
 			$sql = func_get_arg(0);
 			
@@ -77,14 +77,8 @@
 			}
 
 			return $s;
-}
+		}
 
-
-	
-	
 	}
-	
-	
-   
-	
+		
 ?>
