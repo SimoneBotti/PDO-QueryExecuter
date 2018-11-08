@@ -50,6 +50,23 @@ public function sqlHasResult(SQL, [Param1, Param2, ...]): bool
 
   Return **true** if the query has at least one result, **false** otherwise
 
+
+### login()
+
+```php
+public function login(string $tableName, string $email, string $password): string
+```
+
+  Return table's ID if exists a user with this email/password combination, **"NONE"** if not exists
+
+
+### exists()
+
+```php
+public function exists(string $tableName, string $column, mixed $value)
+```
+  Check if the value exist in the row of the table given, if exists return how many times, **false** otherwise
+  
 Php Example:
 
 ```php 

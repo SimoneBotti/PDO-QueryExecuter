@@ -14,12 +14,6 @@
 		private $Ssql = "SELECT Id FROM ";
 		private $Esql = " WHERE Email = ? AND Password = ?";
 		
-
-		/*
-		 * Constructor
-		 * @Param 
-		 * 
-		 */
 		public function __construct(string $ds, string $user, string $pass)
 		{
 			$this->dsn = $ds;
