@@ -9,7 +9,8 @@ Library to execute Query with PDO object
 
 ### getData()
 
-``` public function getData(SQL, [Param1, Param2, ...]): array ``` 
+```php
+ public function getData(SQL, [Param1, Param2, ...]): array ``` 
 
   Execute the query on your database and return the resulting array. First parameter has to be the SQL Query, then your parameters.
   The parameters are optional, if your query doen't need parameters you can avoid putting them.
@@ -17,13 +18,15 @@ Library to execute Query with PDO object
 
 ### getRowCount()
 
-``` public function getRowCount(): bool ```  
+```php
+ public function getRowCount(): bool ```  
 
   Return the rows count of the resulting array.
 
 ### hasResult()
 
-``` public function hasResult(): bool ```  
+```php
+ public function hasResult(): bool ```  
 
   Return **true** if the resulting array has at least one row, **false** if it has 0 row.
 
@@ -35,7 +38,8 @@ Library to execute Query with PDO object
 
 ### sqlHasResult()
 
-``` public function sqlHasResult(SQL, [Param1, Param2, ...]): bool ```  
+```php 
+public function sqlHasResult(SQL, [Param1, Param2, ...]): bool ```  
 
   Return **true** if the query has at least one result, **false** otherwise
 
