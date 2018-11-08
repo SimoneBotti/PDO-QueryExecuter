@@ -1,6 +1,6 @@
 # PDO-QueryExecuter Object
 
-Library to execute Query with PDO object in PHP ![PHP logo](/php_logo.png)
+Library to execute Query with PDO object in PHP :sparkles:
 
 1. Import the php file to your project.
 2. When you need to execute a query in your project create a Controller object
@@ -76,3 +76,6 @@ Php Example:
   $result_array = $controller->getData("YOUR FIRST SQL QUERY", [Param1], [Param2]);
   $result_array2 = $controller->getData("YOUR SECOND SQL QUERY", [Param1], [Param2]);
 ```
+
+
+![PHP logo](/php_logo.png)
