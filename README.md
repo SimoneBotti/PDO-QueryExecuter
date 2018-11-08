@@ -1,9 +1,9 @@
 # PDO-QueryExecuter Object
 Library to execute Query with PDO object
 
-1)Import the php file to your project.<br>
-2)When you need to execute a query in your project create a Controller object<br>
-3)Call the getData() method of the Controller object to obtain the result<br>
+1. Import the php file to your project.
+2. When you need to execute a query in your project create a Controller object
+3. Call the getData() method of the Controller object to obtain the result
 
 CONTROLLER <br>
 -<b>getData(SQL,[Param1],[Param2],[...])</b>: Execute the query on your database and return the resulting array, first parameter has to be the SQL Query, then your parameters.
