@@ -20,7 +20,7 @@ Library to execute Query with PDO object
 ### getRowCount()
 
 ```php
- public function getRowCount(): bool 
+ public function getRowCount(): int 
  ```  
 
   Return the rows count of the resulting array.
