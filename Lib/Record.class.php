@@ -106,6 +106,11 @@
             $this->table = $table;
         }
 
+        public function setID(string $id): void
+        {
+            $this->id_name = $id;
+        }
+
         public function delete(): bool
         {
             if(!isset($this->id_name))
