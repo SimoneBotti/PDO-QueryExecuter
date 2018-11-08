@@ -11,7 +11,7 @@ Library to execute Query with PDO object
 
 ``` public function getData(SQL, [Param1, Param2, ...]): array ``` 
 
-  Execute the query on your database and return the resulting array, first parameter has to be the SQL Query, then your parameters.
+  Execute the query on your database and return the resulting array. First parameter has to be the SQL Query, then your parameters.
   The parameters are optional, if your query doen't need parameters you can avoid putting them.
   You can put as many parameters as you need.
 
@@ -19,46 +19,49 @@ Library to execute Query with PDO object
 
 ``` public function getRowCount(): bool ```  
 
-  Return the rows count of the resulting array.<br><br>
+  Return the rows count of the resulting array.
 
 ### hasResult()
 
 ``` public function hasResult(): bool ```  
 
-  Return true if the resulting array has at least one row, False if it has 0 row.<br><br>
+  Return *true* if the resulting array has at least one row, *false* if it has 0 row.
 
 ### execute()
 
 ``` public function execute(SQL, [Param1, Param2, ...]): bool ```  
 
-  Return true if the query executed correctly, False otherwise.<br><br>
+  Return *true* if the query executed correctly, *false* otherwise.
 
 ### sqlHasResult()
 
 ``` public function sqlHasResult(SQL, [Param1, Param2, ...]): bool ```  
 
-  Return True if the query has at least one result, False otherwise</b>
+  Return *true* if the query has at least one result, *false* otherwise
 
 Php Example:
 
-//YOUR PHP FILE<br>
+```php 
 //File where you need to execute Query<br>
-  require_once 'Controller.php';
-  $controller=new Controller("YOUR DATABASE NAME","USERNAME","PASSWORD");<br>
-  $result_array=$controller->getData("YOUR SQL QUERY",[Param1],[Param2]);<br>
-<br>
-//In $result_array you will have the associative array of the result of the query.<br>
-//In this format, ['Field Name'],value.<br>
-For Example to point the field Name<br>
-  $result_array['Name']<br><br><br>
+
+  require_once 'Controller.class.php';
+
+  $controller = new Controller("YOUR DATABASE NAME", "USERNAME", "PASSWORD");  
+
+  $result_array = $controller->getData("YOUR SQL QUERY", [Param1], [Param2]);
+
+
+  //In $result_array you will have the associative array of the result of the query.
+  //In this format, ['Field Name'],value.
+  
+  //For Example to point the field Name
+  $name = $result_array['Name'];
   
   
-  If you have to do multiple Querys to the same Database you need just one controller object:<br><br>
-  
-  Example:<br>
-  //YOUR PHP FILE <br>
-  //File where you need to execute Query<br>
-    $controller=new Controller("YOUR DATABASE NAME","USERNAME","PASSWORD");<br>
-    $result_array=$controller->getData("YOUR FIRST SQL QUERY",[Param1],[Param2]);<br>
-    $result_array2=$controller->getData("YOUR SECOND SQL QUERY",[Param1],[Param2]);<br>
-  
+  //If you have to do multiple Querys to the same Database you need just one controller object:
+
+  $controller = new Controller("YOUR DATABASE NAME", "USERNAME", "PASSWORD");
+
+  $result_array = $controller->getData("YOUR FIRST SQL QUERY", [Param1], [Param2]);
+  $result_array2 = $controller->getData("YOUR SECOND SQL QUERY", [Param1], [Param2]);
+```
