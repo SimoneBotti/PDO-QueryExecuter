@@ -6,19 +6,22 @@ Library to execute Query with PDO object
 3. Call the getData() method of the Controller object to obtain the result
 
 ## CONTROLLER
-- getData(SQL, [Param1, Param2, ...]) 
+``` public function getData(SQL, [Param1, Param2, ...]): array ``` 
   Execute the query on your database and return the resulting array, first parameter has to be the SQL Query, then your parameters.
   The parameters are optional, if your query doen't need parameters you can avoid putting them.
   You can put as many parameters as you need.
 
-- getRowCount()
+``` public function getRowCount(): bool ```
   Return the rows count of the resulting array.<br><br>
 
--<b>hasResult()</b>: Return true if the resulting array has at least one row, False if it has 0 row.<br><br>
+``` public function hasResult(): bool ```
+  Return true if the resulting array has at least one row, False if it has 0 row.<br><br>
 
--<b>execute(SQL,[Param1],[Param2],[...])</b>:Return true if the query executed correctly, False otherwise.<br><br>
+``` public function execute(SQL, [Param1, Param2, ...]): bool ```
+  Return true if the query executed correctly, False otherwise.<br><br>
 
--<b>sqlHasResult(SQL,[Param1],[Param2],[...])</b>:Return True if the query has at least one result, False otherwise</b>
+``` public function sqlHasResult(SQL, [Param1, Param2, ...]): bool ```
+  Return True if the query has at least one result, False otherwise</b>
 
 Php Example:
 
