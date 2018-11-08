@@ -7,7 +7,7 @@ Library to execute Query with PDO object
 
 ## Controller.class
 
-#getData()
+### getData()
 
 ``` public function getData(SQL, [Param1, Param2, ...]): array ``` 
 
@@ -15,25 +15,25 @@ Library to execute Query with PDO object
   The parameters are optional, if your query doen't need parameters you can avoid putting them.
   You can put as many parameters as you need.
 
-#getRowCount()
+### getRowCount()
 
 ``` public function getRowCount(): bool ```  
 
   Return the rows count of the resulting array.<br><br>
 
-#hasResult()
+### hasResult()
 
 ``` public function hasResult(): bool ```  
 
   Return true if the resulting array has at least one row, False if it has 0 row.<br><br>
 
-#execute()
+### execute()
 
 ``` public function execute(SQL, [Param1, Param2, ...]): bool ```  
 
   Return true if the query executed correctly, False otherwise.<br><br>
 
-#sqlHasResult()
+### sqlHasResult()
 
 ``` public function sqlHasResult(SQL, [Param1, Param2, ...]): bool ```  
 
