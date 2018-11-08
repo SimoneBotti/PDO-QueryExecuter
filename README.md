@@ -8,6 +8,14 @@ Library to execute Query with PDO object in PHP :sparkles:
 
 ## Controller.class
 
+## __construct()
+
+```php
+ public function __construct(string $dsn, string $user, string $pass): array 
+ ``` 
+
+ Creates a Controller object, $dsn is like "mysql:host=localhost;dbname=YOURDBNAME"
+
 ### getData()
 
 ```php
