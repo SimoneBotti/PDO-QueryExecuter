@@ -1,6 +1,7 @@
 <?php
 
 	require_once 'QueryExecuter.class.php';
+	require_once 'Record.class.php';
 
 	class Controller{
 
@@ -122,6 +123,15 @@
 		{
 			$sql = "SELECT ".$column." FROM ".$tableName." WHERE ".$column." = ?";
 			return $sql;
+		}
+
+		public function getRecord(): Record
+		{
+			$arrayFromDatabase = $this->getData(func_get_args());
+			$record = new Record($arrayFromDatabase);
+			$record->setController($this);
+
+			return $record;
 		}
 
 	}
