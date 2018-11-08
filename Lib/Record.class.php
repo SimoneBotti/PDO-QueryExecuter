@@ -13,21 +13,21 @@
         private $container = array();
 
         //Magical Methods
-        public function __construct(array $arrayFromDatabase, string $id = "")
+        public function __construct(array $arrayFromDatabase, string $id = null)
         {
-            foreach($arg as $key => $value)
+            foreach($arrayFromDatabase as $key => $value)
             {
                 $this->$key = $value;
             }
 
             $this->id_name = $id;
-            $this->container = $arg;
+            $this->container = $arrayFromDatabase;
         }
 
         public function __get(string $property)
         {
             if(property_exists($this, $property))
-                if($property === "empty" || $property === "container")
+                if($property === "container")
                     return null;
                 else
                     return $this->$property;
