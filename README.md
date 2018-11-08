@@ -8,7 +8,7 @@ Library to execute Query with PDO object in PHP :sparkles:
 
 ## Controller.class
 
-## __construct()
+### __construct()
 
 ```php
  public function __construct(string $dsn, string $user, string $pass): array 
