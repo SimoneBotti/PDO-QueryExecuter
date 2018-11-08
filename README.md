@@ -1,5 +1,6 @@
 # PDO-QueryExecuter Object
-Library to execute Query with PDO object
+
+Library to execute Query with PDO object in PHP ![PHP logo](/php_logo.png)
 
 1. Import the php file to your project.
 2. When you need to execute a query in your project create a Controller object
