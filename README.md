@@ -25,19 +25,19 @@ Library to execute Query with PDO object
 
 ``` public function hasResult(): bool ```  
 
-  Return *true* if the resulting array has at least one row, *false* if it has 0 row.
+  Return **true** if the resulting array has at least one row, **false** if it has 0 row.
 
 ### execute()
 
 ``` public function execute(SQL, [Param1, Param2, ...]): bool ```  
 
-  Return *true* if the query executed correctly, *false* otherwise.
+  Return **true** if the query executed correctly, **false** otherwise.
 
 ### sqlHasResult()
 
 ``` public function sqlHasResult(SQL, [Param1, Param2, ...]): bool ```  
 
-  Return *true* if the query has at least one result, *false* otherwise
+  Return **true** if the query has at least one result, **false** otherwise
 
 Php Example:
 
