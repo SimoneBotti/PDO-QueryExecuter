@@ -1,7 +1,7 @@
 <?php
     require_once 'Controller.class.php';
 
-    $dsn = "mysql:host=localhost;dbname=utenti";
+    $dsn = "mysql:host=localhost;dbname=DBNAME";
     $user = "root";
     $pass = "";
 
