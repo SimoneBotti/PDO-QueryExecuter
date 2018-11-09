@@ -130,7 +130,11 @@ Php Example:
 
 ## Record.class
 
+<<<<<<< HEAD
 # __construct()
+=======
+# __construct()
+>>>>>>> 3b85723a224967ef8d8e3e659800cdd64da69973
 
 ```php
   public function __construct(array $arrayFromDatabase, string $id = null)
