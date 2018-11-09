@@ -1,4 +1,4 @@
-<?
+<?php
 
     require_once "Controller.class.php";
 
@@ -59,7 +59,7 @@
 
             foreach($this->container as $key => $value)
             {
-                $result .= "$key: $value\n";
+                $result .= "$key: $value<br>";
             }
 
             return $result;

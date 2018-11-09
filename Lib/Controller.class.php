@@ -104,7 +104,7 @@
 		 */
 		public function exists(string $tableName, string $column, $value)
 		{
-			$sql = constructSqlExist($tableName, $columnm, $value);
+			$sql = $this->constructSqlExists($tableName, $columnm, $value);
 			$result = $this->getData($sql,$value);
 
 			if($this->getRowCount() > 0)
@@ -113,7 +113,6 @@
 				return false;
 			
 		}
-
 
 		/**
 		 * Function constructSqlExist
@@ -125,13 +124,15 @@
 			return $sql;
 		}
 
-		public function getRecord(): Record
+		public function getRecord()
 		{
-			$arrayFromDatabase = $this->getData(func_get_args());
+			$args = func_get_args();
+
+			$arrayFromDatabase = call_user_func_array(array(&$this, "getData"), $args);
 			$record = new Record($arrayFromDatabase);
 			$record->setController($this);
 
-			return $record;
+			echo $record;
 		}
 
 	}
