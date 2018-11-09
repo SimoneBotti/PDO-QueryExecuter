@@ -34,11 +34,7 @@
 		{
 			$this->queryExe->connect();
 			$sth = $this->queryExe->execute(func_get_args());
-
-			if((int)$sth == 0)
-				return false;
-			else
-				return true;
+			return $sth;
 		}
 
 		public function getData(): array
@@ -105,7 +101,7 @@
 		public function exists(string $tableName, string $column, $value)
 		{
 			$sql = $this->costructSqlExist($tableName, $column);
-			$result = $this->getData($sql, $value);
+			$this->getData($sql, $value);
 
 			if($this->getRowCount() > 0)
 				return $this->getRowCount();

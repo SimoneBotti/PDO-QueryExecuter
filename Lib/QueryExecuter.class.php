@@ -32,9 +32,10 @@
 		//Function that executes query
     	//First:Query
         //Second-Infinity:Parameters
-		public function execute()
+		public function execute(): bool
 		{
 			$sql = func_get_arg(0);
+			$ok = false;
 
 			try{
 				$query = $sql[0];
@@ -42,39 +43,39 @@
 
 				for($i = 1; $i < count($sql); $i++)
 				{
-					$s->bindValue(($i), $sql[$i]);
+					$ok = $s->bindValue(($i), $sql[$i]);
 				}
 
-				$s->execute();
+				$ok = $s->execute();
 			}catch(PDOException $e){
 				echo "Error in Query: ". $e->getMessage();
 				exit();
 			}
 
-			return $s;
+			return $ok;
 		}
 
 		//Function that executes query
     	//First:Query
-        //Second-Infinito:Parameters
-		public function executeSelect()
+        //Second-Infinite:Parameters
+		public function executeSelect(): PDOStatement
 		{
 			$sql = func_get_arg(0);
+			$ok = false;
 			
 			try{
 				$query = $sql[0];
 				$s = $this->pdo->prepare($query);
 				for($i = 1; $i < count($sql); $i++)
 				{
-					$s->bindValue(($i), $sql[$i]);
+					$ok = $s->bindValue(($i), $sql[$i]);
 				}
-				$s->execute();
+				$ok = $s->execute();
 
 			}catch(PDOException $e){
 				echo "Error in Query". $e->getMessage();
-				exit();
+				return $ok;
 			}
-
 			return $s;
 		}
 

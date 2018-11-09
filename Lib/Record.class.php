@@ -24,6 +24,11 @@
             $this->container = $arrayFromDatabase;
         }
 
+        /**
+         * @param string $property
+         * @return mixed
+         * @throws Exception
+         */
         public function __get(string $property)
         {
             if(property_exists($this, $property))
@@ -48,7 +53,7 @@
         {
             if($this->name_controller !== "")
             {
-                $this->controller = new $name_controller();
+                $this->controller = new $this->name_controller();
                 $this->name_controller = "";
             }
         }
@@ -65,7 +70,7 @@
             return $result;
         }
 
-        //Array Acess Methods
+        //Array Access Methods
         public function offsetSet($offset, $value) 
         {
             if (is_null($offset))
@@ -92,7 +97,7 @@
         //JsonSerializable Method
         public function jsonSerialize()
         {
-            return json_encode($this->container);
+            return $this->container;
         }
 
         //Class Methods
@@ -140,7 +145,12 @@
 
             $sql = "UPDATE $this->table SET $valueToChange = ?";
 
-            return $this->$controller->execute($sql, $newValue);
+            $result =  $this->controller->execute($sql, $newValue);
+
+            if($result)
+                $this->$valueToChange = strval($newValue);
+
+            return $result;
         }
 
     }
