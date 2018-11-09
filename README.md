@@ -128,5 +128,13 @@ Php Example:
 
 ```
 
+## Record.class
 
+# __construct()
+
+```php
+  public function __construct(array $arrayFromDatabase, string $id = null)
+```
+
+made with
 ![PHP logo](/php_logo.png)
