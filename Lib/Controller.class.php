@@ -104,8 +104,8 @@
 		 */
 		public function exists(string $tableName, string $column, $value)
 		{
-			$sql = $this->constructSqlExists($tableName, $columnm, $value);
-			$result = $this->getData($sql,$value);
+			$sql = $this->costructSqlExist($tableName, $column);
+			$result = $this->getData($sql, $value);
 
 			if($this->getRowCount() > 0)
 				return $this->getRowCount();
@@ -118,13 +118,13 @@
 		 * Function constructSqlExist
 		 * create the sql to check if the value exist
 		 */
-		private function costructSqlExist(string $tableName, string $column, $value): string
+		private function costructSqlExist(string $tableName, string $column): string
 		{
 			$sql = "SELECT ".$column." FROM ".$tableName." WHERE ".$column." = ?";
 			return $sql;
 		}
 
-		public function getRecord()
+		public function getRecord(): Record
 		{
 			$args = func_get_args();
 
@@ -132,7 +132,7 @@
 			$record = new Record($arrayFromDatabase);
 			$record->setController($this);
 
-			echo $record;
+			return $record;
 		}
 
 	}
