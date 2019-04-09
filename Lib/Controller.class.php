@@ -15,6 +15,19 @@
 		private $Ssql = "SELECT Id FROM ";
 		private $Esql = " WHERE Email = ? AND Password = ?";
 		
+
+		/*
+		 * Costruttore della classe
+		 * 
+		 * @param string $ds 
+		 *        stringa contenente i valori di connessione al database (vedi classe PDO)
+		 * 
+		 * @param string $user 
+		 *        username dell'utente che tenta una connessione
+		 * 
+		 * @param string $pass
+		 *        password associata all'utente che tenta la connessione
+		 */
 		public function __construct(string $ds, string $user, string $pass)
 		{
 			$this->dsn = $ds;
@@ -24,12 +37,33 @@
 
 		}
 
+		/*
+		 * Funzione getter
+		 * 
+		 * @param string arg0
+		 *        nome del valore che si vuole ottenere
+		 * 
+		 * @return $property
+		 * 		   valore della proprietà richiesta
+		 */
 		public function __get(string $property)
 		{
 			if(property_exists($this, $property))
 				return $this->$property;
 		}
 		
+		/*
+		 * Esegue un comando sul DB, ad eccezione di 'SELECT' (vedi getData())
+		 * 
+		 * @param string arg0
+		 *        stringa che contiene il comando SQL da eseguire, con i valori sostituiti da '?'
+		 * 
+		 * @param string arg0...argN
+		 *        valori da sostituire ai '?' precedenti, in ordine di come appaiono
+		 * 
+		 * @return bool
+		 * 		   Un booleano che rappresenta la riuscita o meno del comando 		 
+		 */
 		public function execute(): bool
 		{
 			$this->queryExe->connect();
