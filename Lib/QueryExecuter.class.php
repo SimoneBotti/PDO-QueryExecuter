@@ -1,6 +1,6 @@
 <?php
 
-
+	
 	class QueryExecuter{
 		private $dsn;
 		private $username;
@@ -8,6 +8,18 @@
 		
 		private $pdo;
 		
+		/*
+		 * Costruttore della classe
+		 * 
+		 * @param string $ds 
+		 *        stringa contenente i valori di connessione al database (vedi classe PDO)
+		 * 
+		 * @param string $user 
+		 *        username dell'utente che tenta una connessione
+		 * 
+		 * @param string $pass
+		 *        password associata all'utente che tenta la connessione
+		 */
 		public function __construct(string $ds, string $user, string $pass)
 		{
 			$this->dsn = $ds;
@@ -15,6 +27,11 @@
 			$this->password = $pass;
 		}
 		
+		/*
+		 * Tenta una connessione al DB usando i dati passati nel costruttore
+		 * 
+		 * @return PDOStatement
+		 */
 		public function connect()
 		{
 			try{
@@ -29,9 +46,21 @@
 			return $this->pdo;
 		}
 		
-		//Function that executes query
-    	//First:Query
-        //Second-Infinity:Parameters
+		/*
+		 * Esegue un comando sul database
+		 * 
+		 * La funzione va bene per qualsiasi comando ad esclusione di 'SELECT' (per quello vedi executeSelect())
+		 * In caso di eccezione, la funzione termina scrivendo la stringa in output
+		 * 
+		 * @param string arg0
+		 *        stringa contenente l'SQL da eseguire, ma con i valori sostituiti da '?'
+		 * 
+		 * @param mixed arg1...argN 
+		 *        valore da sostituire ad i '?' del precedente SQL, in ordine esatto di come appaiono
+		 * 
+		 * @return bool
+		 *         true se il comando è stato eseguito correttamente, false in caso contrario
+         */
 		public function execute(): bool
 		{
 			$sql = func_get_arg(0);
@@ -55,9 +84,21 @@
 			return $ok;
 		}
 
-		//Function that executes query
-    	//First:Query
-        //Second-Infinite:Parameters
+		/*
+		 * Esegue un comando sul database
+		 * 
+		 * La funzione accetta solo comandi 'SELECT'
+		 * In caso di eccezione, la funzione ritorna false, dopo aver scritto in output l'errore
+		 * 
+		 * @param string arg0
+		 *        stringa contenente l'SQL da eseguire, ma con i valori sostituiti da '?'
+		 * 
+		 * @param mixed arg1...argN 
+		 *        valore da sostituire ad i '?' del precedente SQL, in ordine esatto di come appaiono
+		 * 
+		 * @return string 
+		 *         ritorna il risultato della query
+         */
 		public function executeSelect(): PDOStatement
 		{
 			$sql = func_get_arg(0);
